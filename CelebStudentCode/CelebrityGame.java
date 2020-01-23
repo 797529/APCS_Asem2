@@ -11,7 +11,7 @@ public class CelebrityGame
 	/**
 	 * A reference to a Celebrity or subclass instance.
 	 */
-
+	
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
@@ -19,6 +19,7 @@ public class CelebrityGame
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */
+	ArrayList<Celebrity> Celebs = new ArrayList<Celebrity>();
 
 	/**
 	 * Builds the game and starts the GUI

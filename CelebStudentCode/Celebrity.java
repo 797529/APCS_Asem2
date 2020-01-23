@@ -8,7 +8,8 @@ public class Celebrity
 	/**
 	 * The clue to determine the celebrity
 	 */
-	
+	private String name = "";
+	private String hint = "";
 	/**
 	 * The answer or name of the celebrity.
 	 */
@@ -20,6 +21,8 @@ public class Celebrity
 	 */
 	public Celebrity(String answer, String clue)
 	{
+	    name = answer;
+	    hint = clue;
 	}
 
 	/**
@@ -28,7 +31,7 @@ public class Celebrity
 	 */
 	public String getClue()
 	{
-		return null;
+		return hint;
 	}
 
 	/**
@@ -37,7 +40,7 @@ public class Celebrity
 	 */
 	public String getAnswer()
 	{
-		return null;
+		return name;
 	}
 
 	/**
@@ -46,7 +49,7 @@ public class Celebrity
 	 */
 	public void setClue(String clue)
 	{
-		
+		hint = clue;
 	}
 
 	/**
@@ -55,7 +58,7 @@ public class Celebrity
 	 */
 	public void setAnswer(String answer)
 	{
-		
+		name = answer;
 	}
 	
 	/**
@@ -64,7 +67,7 @@ public class Celebrity
 	@Override
 	public String toString()
 	{
-		return null;
+		return name;
 	}
 	
 }
