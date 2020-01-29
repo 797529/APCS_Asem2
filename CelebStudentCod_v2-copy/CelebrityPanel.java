@@ -38,6 +38,7 @@ public class CelebrityPanel extends JPanel
 	 */
 	private JLabel dynamicTimerLabel;
 
+	
 	/**
 	 * Timer for display
 	 */
@@ -82,8 +83,7 @@ public class CelebrityPanel extends JPanel
 	/**
 	 * The current value of the time in seconds.
 	 */
-	private int seconds;
-
+	private int seconds; 
 	/**
 	 * Reference to the game instance.
 	 */
@@ -109,7 +109,7 @@ public class CelebrityPanel extends JPanel
 		this.clueArea = new JTextArea("", 30, 20);
 		this.cluePane = new JScrollPane(clueArea);
 		this.guessField = new JTextField("Enter guess here", 30);
-		this.success = "You guessed correctly!!! \nNext Celebrity clue is: ";
+		this.success = "You guessed correctly! \nNext Celebrity clue is: ";
 		this.tryAgain = "You have chosen poorly, try again!\nThe clue is: ";
 		this.seconds = 60;
 		this.countdownTimer = new Timer(1000, timerListener);
@@ -136,7 +136,7 @@ public class CelebrityPanel extends JPanel
 		
 		//Changes the font to be larger than default
 		staticTimerLabel.setFont(new Font("Helvetica", Font.BOLD,20));
-		dynamicTimerLabel.setFont(new Font("Helvetica", Font.BOLD,20));
+		dynamicTimerLabel.setFont(new Font("Courier", Font.BOLD,20));
 
 		// These lines allow vertical scrolling but not horizontal.
 		cluePane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -279,7 +279,7 @@ public class CelebrityPanel extends JPanel
 		guessButton.setEnabled(true);
 		guessField.setEnabled(true);
 	}
-
+        Color neongreen = new Color(124,252,0);
 	/**
 	 * Refactored method to allow both button and enter press in the guessField
 	 * to provide the same functionality.
@@ -292,7 +292,7 @@ public class CelebrityPanel extends JPanel
 		if (controller.processGuess(currentGuess))
 		{
 			clueArea.append(success + controller.sendClue());
-			clueArea.setBackground(Color.CYAN);
+			clueArea.setBackground(neongreen);
 		}
 		else
 		{
@@ -304,6 +304,12 @@ public class CelebrityPanel extends JPanel
 		if (controller.getCelebrityGameSize() == 0)
 		{
 			clueArea.append("\nNo more celebrities to guess.");
+			guessButton.setEnabled(false);
+			guessField.setEnabled(false);
+		}
+		if (controller.getCelebrityGameSize() == -1)
+		{
+			clueArea.append("\nWait how did this happen. This isn't right. Stop what you are doing.");
 			guessButton.setEnabled(false);
 			guessField.setEnabled(false);
 		}
