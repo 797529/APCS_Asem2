@@ -1,6 +1,7 @@
 /**
  * This is a class that tests the Deck class.
  */
+import java.util.*;
 public class DeckTester {
 
 	/**
@@ -50,7 +51,6 @@ public class DeckTester {
 		System.out.println("  deal: " + d.deal());
 		System.out.println();
 		System.out.println();
-
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		
 	}
 }
